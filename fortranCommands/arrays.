@@ -1,0 +1,76 @@
+Array representation.
+
+1) Arrays can be dynamically declared
+2) Examples
+REAL :: V(3),A(3,2)
+
+3) If the dimmensions are already uknown,
+
+REAL, ALLOCATABLE :: A(:,:)
+
+4) To allocate a specific size
+
+ALLOCATE(A(I,J))
+
+5) Deallocation is done similar
+
+DEALLOCATE(A)
+
+6) Arrays operations
+
+6.1) Addition (if possible)
+
+A = A+B
+
+6.2) Multiplication by scalar
+
+A = A*3.0
+
+6.3) Operation on certain coefficients
+
+A(1:3,1) = A(1:3,1) + B(1:3,1)
+
+6.4) Transpose
+
+VT = TRANSPOSE(V)
+
+6.5) Matrix multiplication 
+
+B = MATMUL(VT,A)
+
+6.6) Dot product
+
+X = DOT_PRODUCT(V1,V2)
+
+6.7) Maximum in an array
+
+AMAX = MAXVAL(A)
+
+6.8) Location
+
+NMAX = MAXLOC(A)
+
+6.9) Number of rows/cols
+
+N = UBOUND(A,1)
+M = UBOUND(A,2)
+
+6.10) Elements satisfying certain conditions
+
+ALL(A>0)
+
+6.11) Sum of elements
+
+C = SUM(A)
+
+6.12) Sum of certain elements
+
+C = SUM(A,MASK=A>0.0)
+
+6.13) SCATTERING AND GATHERING. It works similar to matlab
+
+Example of the elements and connectivity
+
+CONNECTIVITY = (/3,4/)
+U_GLOBAL(CONNECTIVITY) = U_LOCAL --> SCATTERING
+U_LOCAL = U_GLOBAL(CONNECTIVITY) --> GATHERING

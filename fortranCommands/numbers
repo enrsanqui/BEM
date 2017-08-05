@@ -1,0 +1,6 @@
+Representation of numbers.
+
+1) IWP = SELECTED_REAL_KIND(16) --> This is done to know the kind (single precission or double) that will be used to compute a numbrer. Then, declaration of the number should be done
+
+REAL(KIND=IPW) :: A
+
